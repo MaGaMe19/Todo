@@ -3,3 +3,4 @@
 **.lock
 **.code-workspace
 **.txt
+*/**/__pycache__
