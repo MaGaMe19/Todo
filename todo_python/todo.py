@@ -4,6 +4,8 @@ import os
 import json
 from time import sleep as wait
 
+from numberFormatter import formatNum
+
 def printWithSpace(args=""):
     print(f"    {args}")
 
@@ -34,7 +36,7 @@ def listTodos():
         if len(todos) != 0:
             printWithSpace("Unfinished To-Do's:")
             for num, todo in enumerate(todos, 1):
-                printWithSpace(f"{num}. {todo}")
+                printWithSpace(f"{formatNum(num, 'lz', len(str(len(todos))) - len(str(num)))}. {todo}")
         if len(todosDone) != 0:
             printWithSpace()
             printWithSpace("Finished To-Do's:")
