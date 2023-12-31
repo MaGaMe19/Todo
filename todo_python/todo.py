@@ -123,10 +123,14 @@ while not done:
         printWithSpace(f"Opening '{filename}'...")
         printWithSpace(f"WARNING: Only modify this, if you know what you are doing!")
         wait(1)
-        os.system(f"notepad {filename}")
+        if os.system("nvim --version") == 1:
+            os.system(f"notepad {filename}")
+        else:
+            os.system(f"nvim {filename}")
         todos = []
         todosDone = []
         loadFile()
+        listTodos()
         
     elif action.lower() != "":
         try:
